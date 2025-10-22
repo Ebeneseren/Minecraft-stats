@@ -1,0 +1,27 @@
+import os
+import pandas as pd
+import numpy as np
+
+
+UID = ['8b3f17ae-b8ed-4d00-be13-0fd627a2fe7a','35f48380-7ecb-40db-b2fc-be0f99552457','50baa193-5f38-45d8-b485-70871ac0f9d9','056dad97-186f-432e-899f-649013d1beec',
+ '96f91a2b-3af0-4b8f-ab0a-a7f2bb03f5ea','212a0b00-b5ed-49ab-a207-4a4bb48cad5e','0241e47e-c03f-43f7-a0f5-b5714c02a368','310e33a19ea0483d884f5ae5fbdef665',
+ '1285e9f5-d15c-4ce9-8f17-65530a6808a9','5267c37b-71c3-49e6-b077-48b610fb05c1','5849d428-730d-46dd-a5e9-ed3544f3a5ac','15598d56-588d-4d25-a947-2f8d6c137103',
+ 'a142176f-753d-4e53-a00c-e65a07ca576b','ab5dc6f8-ca2e-4b7a-a08b-f8c34a319d12','b50fe849-0fc4-4d86-8f9d-7fc4850a7a41','ca93cff7-e02d-435a-92c5-7fbe9e7860d2',
+ 'ceec246d-7ed1-4598-befa-dfdbb923bf9f','d9eb5c74-4120-4749-99c1-02ec30b4edf2','e5d7d1ea-a6e4-46a2-97e6-3a63fe249dbf','efb5214c-d8b5-4422-b67a-d616b6dffb5e',
+ '1edb3b40-04c2-4771-bae0-3d0d1e44cc82', '310e33a1-9ea0-483d-884f-5ae5fbdef665']
+Names = ['Tetiken', 'Trollelol','aleks00','Karlkarl','SnootGame','YeetingFetuses','o0i0','Norsk_Torsk_','mbaune','EUK6','Rimurux','Elmoslayer05','beepbeephehe','QuantumBeans','vetkevaegkanhete',
+ 'Baykugan','emjer','MnOfSaturn','Noob_hunter','TaliePropell','Snowmine123', 'Norsk_Torsk_']
+
+dictonary = {}
+for i in range(len(UID)):
+    dictonary[UID[i]] = Names[i
+
+
+
+Userslist = os.listdir(r'C:\Users\aleks\Downloads\Minecraft\stats\stats')
+
+Userslist = Userslist[0:-2]
+
+for i in range(len(Userslist)):
+    Userstats = pd.read_json(Userslist[i])
+    print(f"\033[1m{dictonary[Userslist[i][0:-5]]}\033[0m har spilt i \033[1m{Userstats['stats']['minecraft:custom']['minecraft:play_time']/20/60/60:.3}\033[0m timer")
