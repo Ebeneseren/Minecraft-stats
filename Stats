@@ -18,10 +18,15 @@ for i in range(len(UID)):
 
 
 
+
 Userslist = os.listdir(r'C:\Users\aleks\Downloads\Minecraft\stats\stats')
 
 Userslist = Userslist[0:-2]
+play_time_user = {}
 
 for i in range(len(Userslist)):
     Userstats = pd.read_json(Userslist[i])
-    print(f"\033[1m{dictonary[Userslist[i][0:-5]]}\033[0m har spilt i \033[1m{Userstats['stats']['minecraft:custom']['minecraft:play_time']/20/60/60:.3}\033[0m timer")
+    play_time= Userstats['stats']['minecraft:custom']['minecraft:play_time']/20/60/60
+    username = dictonary[Userslist[i][0:-5]]
+    play_time_user[username] = play_time
+    
